@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const Hooks = () => {
 
@@ -9,6 +9,16 @@ const Hooks = () => {
         color: "black",
         background: "pink"
     }
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(data => setData(data));
+    })
+
     return (
         <>
             <h1>Hooks In React</h1>
@@ -48,26 +58,38 @@ const Hooks = () => {
                 useEffect accepts two arguments. The second argument is optional.
 
                 useEffect(function, dependency)
-                </h3>
+            </h3>
+
+            <h2>Fetch Data Using UseEffect</h2>
+            <div className="" style={{width:"200px",display:"flex",gap:'20px'}}>
+                {data.map((item) => (
+                        <div className="card" key={item.id}>
+                            <img src={item.image} alt={item.title} />
+                            <h3>{item.title.substring(0, 40)}...</h3>
+                            <p className="price">${item.price}</p>
+                        </div>
+                    ))}
+            </div>
 
 
 
 
-                    <h2>Hook Rules</h2>
-                    <h3>Hook Rules
-                        There are 3 rules for hooks:
 
-                        Hooks can only be called inside React function components.
-                        Hooks can only be called at the top level of a component.
-                        Hooks cannot be conditional
-                    </h3>
-                    <h2>Note:</h2>
-                    <h3> Hooks will not work in React class components.</h3>
+            <h2>Hook Rules</h2>
+            <h3>Hook Rules
+                There are 3 rules for hooks:
 
-                </>
-                )
+                Hooks can only be called inside React function components.
+                Hooks can only be called at the top level of a component.
+                Hooks cannot be conditional
+            </h3>
+            <h2>Note:</h2>
+            <h3> Hooks will not work in React class components.</h3>
+
+        </>
+    )
 
 }
 
 
-                export default Hooks
+export default Hooks
