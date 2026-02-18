@@ -114,6 +114,7 @@ Name is: ${form.name}
 Message is: ${form.textarea}
 Goal is: ${form.goal}
 ${form.name}: ${wants}
+Gender is: ${form.gender}
 `);
     }
 
@@ -173,6 +174,13 @@ ${form.name}: ${wants}
                                     onChange={change}
                                 />
                             </label>
+                        </div>
+
+                        <div>
+                            Gender:
+                            <label> Male<input type="radio" name="gender" value="male" onChange={change}  /> </label>
+                            
+                            <label>Female <input type="radio" name="gender" value="female" onChange={change}  /> </label>
                         </div>
 
                         <button type="submit" style={styles.button}>
