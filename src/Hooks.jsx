@@ -61,15 +61,26 @@ const Hooks = () => {
             </h3>
 
             <h2>Fetch Data Using UseEffect</h2>
-            <div className="" style={{width:"200px",display:"flex",gap:'20px'}}>
+            <div className="" style={{ width: "200px", display: "flex", gap: '20px' }}>
                 {data.map((item) => (
-                        <div className="card" key={item.id}>
-                            <img src={item.image} alt={item.title} />
-                            <h3>{item.title.substring(0, 40)}...</h3>
-                            <p className="price">${item.price}</p>
-                        </div>
-                    ))}
+                    <div className="card" key={item.id}>
+                        <img src={item.image} alt={item.title} />
+                        <h3>{item.title.substring(0, 40)}...</h3>
+                        <p className="price">${item.price}</p>
+                    </div>
+                ))}
             </div>
+
+
+            <h2>Use Context</h2>
+            <h3>
+                React Context is a way to manage state globally.
+                It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+            </h3>
+            <h3 style={{ color: "red" }}>The Problem <br />
+               "State should be held by the highest parent component in the stack that requires access to the state.
+                To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state."
+            </h3>
 
 
 
