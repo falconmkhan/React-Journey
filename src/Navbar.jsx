@@ -1,11 +1,20 @@
+import { useContext } from "react"
 import { BrowserRouter, Link } from "react-router-dom"
+import { UserContext } from "./Context/ContextOne"
+
+
 
 const Navbar = () => {
+
+    const {user, setUser} = useContext(UserContext)
+
     return (
         <>
-
             <nav>
                 <ul>
+                    <li>
+                        App is Using By {user}
+                    </li>
                     <li>
                         <Link to="/">Home Page</Link>
 
@@ -37,8 +46,11 @@ const Navbar = () => {
                         <Link to="/fetchdata">Fetch Data</Link>
 
                     </li>
-                </ul>
+                     <li>
+                        <Link to="/forms">Forms </Link>
 
+                    </li>
+                </ul>
             </nav>
         </>
     )

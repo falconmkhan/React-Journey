@@ -11,6 +11,8 @@ import Navbar from './Navbar'
 import Hooks from './Hooks'
 import FetchData from './FetchData'
 import ShowData from './ShowData'
+import Forms from './Forms'
+import ContextTwo from './Context/ContextTwo'
 
 function App() {
 
@@ -25,7 +27,7 @@ function App() {
   // Variables For Condionals Component===========
   let action = "working"
   let limit = 9
-  let model = "Lenove Thinkpad T14"
+  let model = "Lenove Thinkpad"
 
 
   // Variable For Parent Component===========
@@ -54,6 +56,8 @@ function App() {
           <Route path="/hooks" element={<Hooks />}></Route>
           <Route path="/fetchdata" element={<FetchData />}></Route>
           <Route path="/fetchdata/product/:id" element={<ShowData />}></Route>
+          <Route path="/forms" element={<Forms />}></Route>
+          <Route path="/context2" element={<ContextTwo />}></Route>
           <Route path='*' element={<ErrorPage />}></Route>
         </Routes>
 
