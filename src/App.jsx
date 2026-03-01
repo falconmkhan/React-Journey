@@ -13,6 +13,8 @@ import FetchData from './FetchData'
 import ShowData from './ShowData'
 import Forms from './Forms'
 import ContextTwo from './Context/ContextTwo'
+import CreateData from './Api/Create'
+import FetchApi from './Api/Fetch'
 
 function App() {
 
@@ -58,6 +60,8 @@ function App() {
           <Route path="/fetchdata/product/:id" element={<ShowData />}></Route>
           <Route path="/forms" element={<Forms />}></Route>
           <Route path="/context2" element={<ContextTwo />}></Route>
+          <Route path='/api' element={<FetchApi />}></Route>
+          <Route path='/api/createdata' element={<CreateData />}></Route>
           <Route path='*' element={<ErrorPage />}></Route>
         </Routes>
 

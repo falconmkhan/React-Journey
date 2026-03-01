@@ -46,10 +46,13 @@ const Navbar = () => {
                         <Link to="/fetchdata">Fetch Data</Link>
 
                     </li>
-                     <li>
+                    <li>
                         <Link to="/forms">Forms </Link>
-
                     </li>
+                    <li>
+                        <Link to="/api">Api </Link>
+                    </li>
+                    
                 </ul>
             </nav>
         </>
