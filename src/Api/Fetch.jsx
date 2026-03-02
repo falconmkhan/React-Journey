@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { UserContext } from "../Context/ContextOne"
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 const FetchApi = () => {
 
-    useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
-            .then(response => response.json())
-            .then((data) => {
-                setProducts(data)
-                setLoading(false)
-            }
-            )
-            .catch((e) => console.log(e))
-    }, [])
-
-    const [loading, setLoading] = useState(true)
-    const [products, setProducts] = useState([]);
+    const {loading,setLoading, products, setProducts} = useContext(UserContext)
+   
 
     return (
         <>
