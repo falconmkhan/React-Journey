@@ -31,7 +31,9 @@ const EditData = () => {
 
     const update = (e) => {
         e.preventDefault()
-        fetch(`https://fakestoreapi.com/products/${id}`, {
+        // fetch(`https://fakestoreapi.com/products/${id}`, 
+        fetch(`http://192.168.0.164:8000/api/products${id}`,     
+        {
             method: 'PUT',
             headers: {
                 'Content-Type': "application/json"

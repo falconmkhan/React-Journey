@@ -5,8 +5,8 @@ import { UserContext } from "../Context/ContextOne"
 
 const FetchApi = () => {
 
-    const {loading,setLoading, products, setProducts} = useContext(UserContext)
-   
+    const { loading, products } = useContext(UserContext)
+
 
     return (
         <>
@@ -40,30 +40,32 @@ const FetchApi = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {products.map((item) => (
-                                            <tr key={item.id}>
+                                        {/* {products.map((item, key) => ( */}
+                                        {Array.isArray(products) && products.map((item,key) => (
+                                            <tr key={key}>
                                                 <td className="fw-bold">{item.id}</td>
 
                                                 <td style={{ maxWidth: "200px" }}>
-                                                    {item.title}
+                                                    {item.productname}
                                                 </td>
 
                                                 <td className="text-success fw-bold">
-                                                    ${item.price}
+                                                    ${item.productprice}
                                                 </td>
 
                                                 <td style={{ maxWidth: "250px" }}>
-                                                    {item.description.split(" ").slice(0,10).join(" ")}...
+                                                    {item.productdescr}
+                                                    {/* {item.description.split(" ").slice(0, 10).join(" ")}... */}
                                                 </td>
 
                                                 <td>
-                                                    {item.category}
+                                                    {item.category.categoryname}
                                                 </td>
 
                                                 <td>
                                                     <img
-                                                        src={item.image}
-                                                        alt={item.title}
+                                                        src={item.productimage}
+                                                        alt={item.productname}
                                                         style={{
                                                             width: "80px",
                                                             height: "80px",
@@ -73,7 +75,9 @@ const FetchApi = () => {
                                                     />
                                                 </td>
                                                 <td>
-                                                    <button className="btn btn-sm">Edit</button>
+                                                    <Link to="/api/createdata" className="btn btn-warning">
+                                                        Edit
+                                                    </Link>
                                                 </td>
                                             </tr>
                                         ))}
