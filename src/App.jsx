@@ -15,6 +15,9 @@ import Forms from './Forms'
 import ContextTwo from './Context/ContextTwo'
 import CreateData from './Api/Create'
 import FetchApi from './Api/Fetch'
+import EditData from './Api/Edit'
+import FetchCategory from './Api/Category_Fetch'
+import CreateCategory from './Api/Category_Create'
 
 function App() {
 
@@ -61,7 +64,10 @@ function App() {
           <Route path="/forms" element={<Forms />}></Route>
           <Route path="/context2" element={<ContextTwo />}></Route>
           <Route path='/api' element={<FetchApi />}></Route>
+          <Route path='/api/category' element={<FetchCategory />}></Route>
           <Route path='/api/createdata' element={<CreateData />}></Route>
+          <Route path='/api/createcategory' element={<CreateCategory />}></Route>
+          <Route path='/api/editdata/:id' element={<EditData />}></Route>
           <Route path='*' element={<ErrorPage />}></Route>
         </Routes>
 

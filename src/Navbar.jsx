@@ -6,7 +6,7 @@ import { UserContext } from "./Context/ContextOne"
 
 const Navbar = () => {
 
-    const {user, setUser} = useContext(UserContext)
+    const {user} = useContext(UserContext)
 
     return (
         <>
@@ -44,15 +44,17 @@ const Navbar = () => {
                     </li>
                     <li>
                         <Link to="/fetchdata">Fetch Data</Link>
-
                     </li>
                     <li>
                         <Link to="/forms">Forms </Link>
                     </li>
                     <li>
-                        <Link to="/api">Api </Link>
+                        <Link to="/api">Api Laravel</Link>
                     </li>
                     
+                    <li>
+                        <Link to="/api/category">Api Category</Link>
+                    </li>
                 </ul>
             </nav>
         </>
