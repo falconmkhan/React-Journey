@@ -38,27 +38,29 @@ const CreateData = () => {
         formData.append("category_id", data.category_id)
 
         fetch("http://192.168.100.6:8000/api/products",
-            // fetch("http://192.168.0.164:8000/api/products",             
+        // fetch("http://192.168.0.164:8000/api/products",
             {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                // body: formData
-                body: JSON.stringify({
-                    ...formData,
-                    productprice: Number(data.productprice),
-                    category_id: Number(data.category_id),
-                    productimage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYG71-twoz2sc5txz2n4IOivRckq8cuE46Fg&s"
-                })
+                // headers: {
+                //     'Content-Type': 'application/json'
+                // },
+                body: formData
+                // body: JSON.stringify({
+                //     ...formData,
+                //     productprice: Number(data.productprice),
+                //     category_id: Number(data.category_id),
+                //     productimage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYG71-twoz2sc5txz2n4IOivRckq8cuE46Fg&s"
+                // })
             })
             .then((res) => res.json())
             .then((new_data) => {
                 setProducts([...products, new_data])
+                // console.log(products)
                 navigate('/api')
                 alert("Form Submitted")
             })
-            .catch((e) => alert(e))
+            .catch((e) => console.log(e))
+
         // .then((response) => {
 
         //     if (!response.success) {
@@ -72,6 +74,7 @@ const CreateData = () => {
         //     navigate("/api")
         //     alert("Product Created Successfully")
         // })
+
 
         console.log(data)
     }
@@ -94,8 +97,8 @@ const CreateData = () => {
                 <input type="number" name="category_id" onChange={check} placeholder="Category" />
                 <br />
 
-                {/* <input type="file" name="productimage" onChange={check} />
-                <br /> */}
+                <input type="file" name="productimage" onChange={check} />
+                <br />
 
                 <button type="submit">Add</button>
             </form>

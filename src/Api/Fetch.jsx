@@ -41,7 +41,7 @@ const FetchApi = () => {
                                     </thead>
                                     <tbody>
                                         {/* {products.map((item, key) => ( */}
-                                        {Array.isArray(products) && products.map((item,key) => (
+                                        { !loading && Array.isArray(products) && products.map((item,key) => (
                                             <tr key={key}>
                                                 <td className="fw-bold">{item.id}</td>
 
@@ -59,7 +59,7 @@ const FetchApi = () => {
                                                 </td>
 
                                                 <td>
-                                                    {item.category.categoryname}
+                                                    {item.category ? item.category.categoryname : 'NA'}
                                                 </td>
 
                                                 <td>

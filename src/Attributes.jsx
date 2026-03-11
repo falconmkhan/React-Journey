@@ -36,6 +36,8 @@ function Attributes(){
         <br /> <br />
         Style Attribute 
         <button style={myStyles}>Style Attribute</button>
+        Inline Style Attribute 
+        <button style={{color: "black", background: "Pink"}}>Inline Styling</button>
         </>
     )
 }
